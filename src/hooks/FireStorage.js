@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { firebaseStorage } from "../firebase/FirebaseConfig";
+import { firebaseStorage, firestore  } from "../firebase/FirebaseConfig";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage"
 
 // We are now creating a small chunk of code in react that will give us reuseable code and can then use them in whatever component needs them. The whole point of this hook is create references for us to use in our components!
@@ -14,7 +14,7 @@ const FireStorage = (imgFile) => {
         // (b) any errors from the upload
         const [error, setError] = useState(null);
         // (c) the image url we get back from storage after the image has full uploaded
-        const [url, setUrl] = useEffect(null);
+        const [url, setUrl] = useState(null);
 
         // 3(a): We want to use our storage to upload the file that the user selects. This code will need to run every time that that there is a new imgFile value passed through to our storage. Hence, we must use a useEffect hook!
 
