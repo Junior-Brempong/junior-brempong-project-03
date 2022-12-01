@@ -3,6 +3,7 @@ import './styles/styles.css';
 import Title from './components/Title';
 import ImageForm from './components/Form';
 import { useState } from "react";
+import ImageDisplay from './components/ImageDisplay';
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <Title/>
       {/* Imported our Image form in our root to return our JSX */}
       <ImageForm />
+      <ImageDisplay />
     </div>
   );
 }

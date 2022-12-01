@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { firebaseStorage, firestore  } from "../firebase/FirebaseConfig";
+import { firebaseStorage, firestore, timestamp  } from "../firebase/FirebaseConfig";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage"
 
 // We are now creating a small chunk of code in react that will give us reuseable code and can then use them in whatever component needs them. The whole point of this hook is create references for us to use in our components!
@@ -28,6 +28,10 @@ const FireStorage = (imgFile) => {
 
             const uploadTask = uploadBytesResumable(storageRef, imgFile);
 
+            // 6: Our hook has triggered because of the user upload, we now want to take the url we are provided to in from our progress bar and pass this through to the fire store. This is how we will display the information on the page. We can use a method called collection which firebase will create for us. We now will have an image collection with a randomized ID and two fields (createdAt & url)
+
+            const collectionRef = firestore.collection('images')
+
             // 4(a): We can use a method called put on our storageRef that will now take a file and put it in the reference. This however can take some time, so what we can do is add a listener which will fire functions when certain events happen. 
                 // This can be done with .on() which will also give us a second object which is a snapshot in time of our upload
             uploadTask.on('state_changed', (snap) => {
@@ -42,9 +46,12 @@ const FireStorage = (imgFile) => {
             },
             // 4(d) Pass through another argument that will fire once the upload is complete. We mark this as an asynce, essentially telling the function to wait until
             () => {
-                // get the url of the image loaded
+                // get the url of the image loaded. Once we trigger our upload and it runs this function, we can now take this url which is saved in our database and provide it to the firestore
                 getDownloadURL(uploadTask.snapshot.ref).then((url) => setUrl(url)
                 );
+                // 6(b) The collection of urls we are gathering from our users selection, we would like to add the url and a createAt property to show display the images chronologically on the screen --> this is will require us to create a time stamp in our firebase server. Now our createdAt will invoke this
+                const createdAt = timestamp()
+                collectionRef.add({ url, createdAt})
             }
             );
         }, [imgFile] )

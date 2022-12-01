@@ -86,4 +86,11 @@ body {
 /* upload form styles */
 /* progress bar styles */
 /* image grid styles */
-/* modal styles *//*# sourceMappingURL=styles.css.map */
+/* modal styles */
+/* progress bar styles */
+.progress-bar {
+  height: 5px;
+  background: var(--primary);
+  margin-top: 20px;
+  margin-bottom: 20px;
+}/*# sourceMappingURL=styles.css.map */

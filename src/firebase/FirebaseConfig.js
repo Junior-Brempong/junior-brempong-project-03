@@ -28,5 +28,9 @@ const firebaseStorage = getStorage();
 
 const firestore = getFirestore();
 
+// We create a constant called timestamp so we can import this to our storage and create a timestamp that will display our images chronologically. This is specific to firestore
+
+const timestamp = firestore.FieldValue.ServerTimestamp;
+
 // Exporting so we can use these services in other files in the future
-export { firebaseStorage, firestore };
+export { firebaseStorage, firestore, timestamp };
