@@ -1,10 +1,9 @@
 // Here we are setting up our Firebase API! This is the information that we will use to initalize our app and connect to the backend of Firebase.
 
 // The * lets us import everything from firebase so that we can readily use it when needed:
-
-import * as firebase from 'firebase/compat/app';
-import 'firebase/compat/storage';
-import 'firebase/compat/firestore';
+import { initializeApp } from 'firebase/app';
+import { getFirestore } from 'firebase/firestore';
+import { getStorage } from 'firebase/storage'
 
 // Your web app's Firebase configuration
 
@@ -19,14 +18,15 @@ const firebaseConfig = {
 
 
   // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
+initializeApp(firebaseConfig);
 
 //   Initalize the firestore service
 
 // We save both of these functions into variables for when we easily want to interact with either one of these
 
-const firebaseStorage = firebase.storage();
+const firebaseStorage = getStorage();
 
-const fireStore = firebase.fireStore();
+const firestore = getFirestore();
 
-export { firebaseStorage, fireStore };
+// Exporting so we can use these services in other files in the future
+export { firebaseStorage, firestore };

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import ProgressBar from "./ProgressBar";
 
 
 // 1: create the function in which we would like to mount the form JSX to our page, where our user will be able to submit an image from their computers.
@@ -58,6 +59,9 @@ const ImageForm = () => {
                 { error && <div className="error">{ error }</div>}
                 {/* We will do the same thing and output if we have a valid file type as well. This way a user can see what they have selected */}
                 { imgFile && <div> {imgFile.name} </div> }
+                {/* Inserting our progress bar on the condition that we have a file selected */}
+                {/* We want to pass through the file to the progress bar, so we can now gain access to to FireStorage hook that we created. We can also pass through the setImgFile as well so that when the progress is complete we can set the value back to null*/}
+                { imgFile && <ProgressBar file={imgFile} setFile={setImgFile} /> }
             </div>
         </form>
     )
