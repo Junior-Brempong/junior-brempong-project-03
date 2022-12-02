@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { firebaseStorage, firestore, timestamp  } from "../firebase/FirebaseConfig";
 import { ref, uploadBytesResumable, getDownloadURL, getStorage } from "firebase/storage"
-import { collection, addDoc, add, doc, updateDoc, serverTimestamp } from "firebase/firestore"; 
+import { collection, addDoc, add, doc, updateDoc, serverTimestamp, getDoc, getDocs } from "firebase/firestore"; 
 
 // We are now creating a small chunk of code in react that will give us reuseable code and can then use them in whatever component needs them. The whole point of this hook is create references for us to use in our components!
 
@@ -51,8 +51,11 @@ const FireStorage = (imgFile) => {
             () => {
                 
                     // const storage = getStorage()
-                    console.log(typeof imgFile.name)
-                    return getDownloadURL(ref(firestore, imgFile.name))
+                    // console.log(imgFile.name)
+            
+                    console.log(imgFile.name);
+
+                    getDownloadURL(getDocs(firestore, imgFile.name))
                     .then(data => {
                         console.log('URL:', data)
                         const createdAt = timestamp;
@@ -64,12 +67,14 @@ const FireStorage = (imgFile) => {
                     url: url,
                     timestamp: serverTimestamp()   
                 })
+
+
                         
             // 6(b) The collection of urls we are gathering from our users selection, we would like to add the url and a createAt property to show display the images chronologically on the screen --> this is will require us to create a time stamp in our firebase server. Now our createdAt will invoke this
             // const createdAt = timestamp();
 
                         // collectionRef.add({ url, createdAt });
-                        // setUrl(url);
+                        setUrl(url);
                         })
                 })
         }, [imgFile] )

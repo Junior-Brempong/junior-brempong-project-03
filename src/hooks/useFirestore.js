@@ -23,13 +23,13 @@ const useFirestore = (accessCollection) => {
 
         const imgSnap = getDocs(collection(firestore, 'images')).then((data) => {
 
-            console.log(data)
+            console.log(data, "imgsnap")
             data.forEach((doc) => {
 
                 
                 const returnedData = doc.data();
                 
-                console.log(returnedData);
+                console.log(returnedData, "returned data");
 
 
 
@@ -38,6 +38,8 @@ const useFirestore = (accessCollection) => {
                 // Object.assign would also work
                 return {...prevState, ...returnedData};
              });
+
+             
 
 
             
