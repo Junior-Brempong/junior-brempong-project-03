@@ -26,13 +26,20 @@ const useFirestore = (accessCollection) => {
             console.log(data)
             data.forEach((doc) => {
 
-                console.log(doc.id, " => ", doc.data());
                 
-                return (
-                    <div className="img-grid">        
-                    { doc.data() }
-                    </div>
-                )
+                const returnedData = doc.data();
+                
+                console.log(returnedData);
+
+
+
+
+                setDocs(prevState => {
+                // Object.assign would also work
+                return {...prevState, ...returnedData};
+             });
+
+
             
 
                  

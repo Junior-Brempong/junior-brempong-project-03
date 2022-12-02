@@ -19,10 +19,13 @@ const ImageForm = () => {
     const changeHandler = (e) => {
 
        
+        
         // 3(a):  Because of the event object we are given for this function we can use this to access the file the user has selected
             //.files is a property called files, this gives us all the files that have been selected. However, we want the first file selected, so we can has this into the array to target. This gives us a multitude of properties to parse through (exp. file type, size, etc).
             //  We want to be able to access this data globally, so we can store this into a local piece of state
         let selectedImage = e.target.files[0];
+
+        
 
         // 4 (a): We only want to store this information if a file is created. Otherwise when a user clicks on our input and chooses nothing we would set the state with another null value. For this we can write a conditional.
             // We also want to make sure that only certain file types can be selected (we wouldn't want audio being uploaded). We know that our event object gave us access to this property, so we can add this into our conditional as well. 

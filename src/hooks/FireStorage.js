@@ -26,6 +26,7 @@ const FireStorage = (imgFile) => {
 
             const storageRef = ref(firebaseStorage , 'images');
 
+            console.log(storageRef, "storage");
 
             // 6: Our hook has triggered because of the user upload, we now want to take the url we are provided to in from our progress bar and pass this through to the fire store. This is how we will display the information on the page. We can use a method called  addDoc and collection which firebase will create for us. We now will have an image collection with a randomized ID and two fields (createdAt & url)
 
@@ -47,28 +48,28 @@ const FireStorage = (imgFile) => {
             
             // 4(d) Pass through another argument that will fire once the upload is complete. 
                 // get the url of the image loaded. Once we trigger our upload and it runs this function, we can now take this url which is saved in our database and provide it to the firestore.
-                () => {
-                    
-                        // const storage = getStorage()
-                        console.log(imgFile.name)
-                        getDownloadURL(ref(firestore, imgFile.name))
-                        .then((url) => {
-                            console.log('URL:', url)
-                            const createdAt = timestamp;
-                            console.log(createdAt);
+            () => {
+                
+                    // const storage = getStorage()
+                    console.log(typeof imgFile.name)
+                    return getDownloadURL(ref(firestore, imgFile.name))
+                    .then(data => {
+                        console.log('URL:', data)
+                        const createdAt = timestamp;
+                        console.log(createdAt);
 
             // 6: Our hook has triggered because of the user upload, we now want to take the url we are provided to in from our progress bar and pass this through to the fire store. This is how we will display the information on the page. We can use a method called  addDoc and collection which firebase will create for us. We now will have an image collection with a randomized ID and two fields (createdAt & url)
 
-                        const collectionRef = addDoc(collection (firestore, "images"), { 
-                            url: url,
-                            timestamp: serverTimestamp()   
-                        })
+                const collectionRef = addDoc(collection (firestore, "images"), { 
+                    url: url,
+                    timestamp: serverTimestamp()   
+                })
                         
             // 6(b) The collection of urls we are gathering from our users selection, we would like to add the url and a createAt property to show display the images chronologically on the screen --> this is will require us to create a time stamp in our firebase server. Now our createdAt will invoke this
             // const createdAt = timestamp();
 
                         // collectionRef.add({ url, createdAt });
-                        setUrl(url);
+                        // setUrl(url);
                         })
                 })
         }, [imgFile] )

@@ -12,11 +12,11 @@ const ImageDisplay = () => {
     const { docs } = useFirestore('images');
 
 
-    return (
-        <div className="img-grid">        
-        images
-        </div>
-    )
+    // return (
+    //     <div className="img-grid">        
+    //     images
+    //     </div>
+    // )
 
 }
 
