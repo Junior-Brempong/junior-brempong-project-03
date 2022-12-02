@@ -8,9 +8,7 @@ const rootElement = document.getElementById("root");
 const root = createRoot(rootElement);
 
 root.render(
-  <StrictMode>
     <App />
-  </StrictMode>
 );
 
 // If you want your app to work offline and load faster, you can change

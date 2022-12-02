@@ -3,7 +3,9 @@
 // The * lets us import everything from firebase so that we can readily use it when needed:
 import { initializeApp } from 'firebase/app';
 import { getFirestore } from 'firebase/firestore';
-import { getStorage } from 'firebase/storage'
+import { getStorage } from 'firebase/storage';
+import firebase from 'firebase/compat/app';
+import 'firebase/compat/firestore';
 
 // Your web app's Firebase configuration
 
@@ -18,6 +20,7 @@ const firebaseConfig = {
 
 
   // Initialize Firebase
+
 initializeApp(firebaseConfig);
 
 //   Initalize the firestore service
@@ -28,9 +31,14 @@ const firebaseStorage = getStorage();
 
 const firestore = getFirestore();
 
+
+
 // We create a constant called timestamp so we can import this to our storage and create a timestamp that will display our images chronologically. This is specific to firestore
 
-const timestamp = firestore.FieldValue.ServerTimestamp;
+const timestamp = firebase.firestore.FieldValue.serverTimestamp;
+
 
 // Exporting so we can use these services in other files in the future
 export { firebaseStorage, firestore, timestamp };
+
+
