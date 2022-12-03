@@ -4,8 +4,25 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    img {
+        width: 400px;
+        height: 250px;
+        background: #fff;
+        padding: 1rem;
+        box-shadow: 0 0.2rem 1.2rem rgba(0,0,0,0.2);
+        border-radius: 12px;
+    }
 }
 
 .imgWrap {
     margin: 20px;
+}
+
+// Image grid animations:
+
+.imgGrid {
+    img:hover {
+        transform: scale(1.2);
+        transition: all 0.35s
+    }
 }

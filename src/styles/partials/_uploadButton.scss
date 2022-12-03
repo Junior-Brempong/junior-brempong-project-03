@@ -1,19 +1,33 @@
 // Upload Button Styles
 
+
+input[type="file"] {
+  display: none;
+}
+
+form {
+  margin-top: 50px;
+}
+
+
 .fileUploadButton {
     display: block;
-    width: 110px;
-    height: 35px;
-    border: 5px solid #eeaeca;
-    background-color: #eeaeca;
-    border-radius: 5%;
+    width: 315px;
+    height: 60px;
+    padding: 5px;
+    background: #e4bff2;
+    border-radius: 10px;
+    box-shadow: 0 0.2rem 1.2rem rgba(0,0,0,0.2);
+    border: 2px solid white;
     margin: 10px auto;
     line-height: 30px;
-    color: var(--primary);
     font-weight: bold;
-    font-size: 24px;    
-  }
+    font-size: 1.2rem;    
+}
 
-  input {
-    border: none
-  }
+.fileUploadButton:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+  transition: all 0.35s;
+  color: white;
+}

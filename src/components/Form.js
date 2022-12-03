@@ -62,7 +62,9 @@ const ImageForm = () => {
     return(
         <form action="">
             {/* This is the input type that will allow a user to select an image from their computer. Our input initially does not do anything aside from populate the name of the image the user would like to upload. However, we can add an onChange */}
-            <input type="file" className="fileUploadButton" onChange={ changeHandler }/>
+            <label className="fileUploadButton">Click here to upload your image!
+            <input type="file" onChange={ changeHandler }/>
+            </label>
             {/* Step 5(a): We want to output the results of our user selection here. So we can create a div where we can output our error or file if we have it (this is why we used state, so store these variables!) */}
             <div className="output">
                 {/* If the there is an error we are going to output a div with a class of error and inside we are going to output the error itself */}

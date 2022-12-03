@@ -21,7 +21,6 @@ const ImageDisplay = () => {
                 <img src={doc.url} alt="picture upload" />
             </div>
         ) ) }
-        <p>Ello, ello, what's all this then?</p>
 
         </div>
     )

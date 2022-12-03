@@ -40,7 +40,7 @@ const useFirestore = (accessCollection) => {
     }, [accessCollection])
 
     // This will allow us to return all the docs once we have them
-    return {docs};
+    return   {docs};
 };
 
 export default useFirestore;

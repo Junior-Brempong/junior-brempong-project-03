@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
-import { firebaseStorage, firestore, timestamp  } from "../firebase/FirebaseConfig";
-import { ref, uploadBytesResumable, getDownloadURL, getStorage, getResult } from "firebase/storage"
-import { collection, addDoc, serverTimestamp, getDocs } from "firebase/firestore"; 
+import { firebaseStorage, firestore } from "../firebase/FirebaseConfig";
+import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage"
+import { collection, addDoc, serverTimestamp } from "firebase/firestore"; 
 
 
 

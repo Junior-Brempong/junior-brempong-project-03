@@ -1,9 +1,12 @@
 // Header Styles
 
 .title {
-    background: rgb(238,174,202);
-    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+    background-image: url(https://wallpapercave.com/uwp/uwp122095.gif);
+    // background: rgb(238,174,202);
+    // background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
     height: 110%;
+    border-radius: 15px;
+    box-shadow: 0 0.2rem 1.2rem rgba(0,0,0,0.2);
 }
 
 .title h1{
@@ -18,7 +21,7 @@
     text-align: center;
   }
   .title h2{
-    margin-top: 60px;
+    margin-top: 85px;
     margin-bottom: 0px;
     font-size: 5rem;
     color: var(--secondary);
@@ -26,13 +29,40 @@
   
   .title p {
     font-family: 'Open Sans', sans-serif;
-    margin-top: 50px;
+    margin-top: 15px;
+    margin-bottom: 15px;
     font-size: 1.2rem;
+    font-style: italic;
   }
 
   .title img {
-    height: 100px;
+    height: 250px;
     border-radius: 12px;
-    margin-bottom: 30px;
-    margin-top: 20px;
+    margin-bottom: 0px;
+    margin-top: 0px;
   }
+
+  // Animations
+
+  .title h1:hover {
+    color: white;
+    transform: scale(1.2);
+    transition: all 0.40s
+  }
+
+  .title h2:hover {
+    color: white;
+    transform: scale(1.2);
+    transition: all .40s
+  }
+
+  .title p:hover {
+    color: white;
+    transform: scale(1.2);
+    transition: all 0.40s
+  }
+
+.title img:hover {
+  transform: scale(1.2);
+  transition: all 0.35s
+}
