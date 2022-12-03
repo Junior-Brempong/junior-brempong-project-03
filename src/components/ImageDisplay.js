@@ -1,5 +1,9 @@
 import React from "react";
 import useFirestore from '../hooks/useFirestore';
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // You can also use <link> for styles
+// ..
+AOS.init();
 
 // This will be the function that returns the JSX with our of our photos to the screen
 
@@ -18,7 +22,7 @@ const ImageDisplay = () => {
         { docs && docs.map(doc => (
             <div className="imgWrap" key={doc.id}>
                 <p></p>
-                <img src={doc.url} alt="picture upload" />
+                <img src={doc.url} alt="picture upload" data-aos="fade-up" data-aos-duration="1000"/>
             </div>
         ) ) }
 
