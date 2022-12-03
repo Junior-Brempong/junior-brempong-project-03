@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import { firebaseStorage } from "../firebase/FirebaseConfig";
 import FireStorage from '../hooks/FireStorage.js';
 
 
@@ -25,14 +24,11 @@ const ProgressBar = ( {file, setFile} ) => {
     // Because we are using the setFile to as well, we must include this in our dependency
     }, [url, setFile] )
 
-
-
     // Step 1: Return a JSX template that we can put in our App.js which will impact what is displayed on screen
     // Step 2(c): Now that we have access to the progress status, we can style our progress bar div to reflect that by adding the width of the progress as a style
     return (
         <div className="progress-bar" style={ {width: progress + '%'} }></div>
     )
-
 
 }
 

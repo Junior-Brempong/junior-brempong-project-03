@@ -1,6 +1,5 @@
 import React from "react";
 import useFirestore from '../hooks/useFirestore';
-import { firestore } from "../firebase/FirebaseConfig";
 
 // This will be the function that returns the JSX with our of our photos to the screen
 
@@ -10,13 +9,22 @@ const ImageDisplay = () => {
 
     // This useFirestore hook allows us to go through our firestore and look at the collections named images
     const { docs } = useFirestore('images');
+    console.log(docs);
 
 
-    // return (
-    //     <div className="img-grid">        
-    //     images
-    //     </div>
-    // )
+    return (
+        <div className="imgGrid">        
+        
+        { docs && docs.map(doc => (
+            <div className="imgWrap" key={doc.id}>
+                <p></p>
+                <img src={doc.url} alt="picture upload" />
+            </div>
+        ) ) }
+        <p>Ello, ello, what's all this then?</p>
+
+        </div>
+    )
 
 }
 

@@ -1,0 +1,11 @@
+// Image grid styles
+
+.imgGrid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.imgWrap {
+    margin: 20px;
+}
