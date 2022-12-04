@@ -78,7 +78,6 @@ const ImageForm = () => {
                 {/* We want to pass through the file to the progress bar, so we can now gain access to to FireStorage hook that we created. We can also pass through the setImgFile as well so that when the progress is complete we can set the value back to null*/}
                 { imgFile && <ProgressBar file={imgFile} setFile={setImgFile} /> }
             </div>
-            <button onClick={imageDelete}  >Clear it!</button>
         </form>
     )
 

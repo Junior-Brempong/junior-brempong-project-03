@@ -173,9 +173,34 @@ form {
 
 .imgWrap {
   margin: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.deleteButton {
+  text-decoration: none;
+  display: block;
+  width: 175px;
+  height: 50px;
+  padding: 5px;
+  background: #e4bff2;
+  border-radius: 10px;
+  box-shadow: 0 0.2rem 1.2rem rgba(0, 0, 0, 0.2);
+  border: 2px solid white;
+  margin: 10px auto;
+  line-height: 30px;
+  font-weight: bold;
+  font-size: 1.2rem;
 }
 
 .imgGrid .imgWrap:hover {
   transform: scale(1.2);
   transition: all 0.35s;
+}
+.imgGrid button:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+  transition: all 0.35s;
+  color: white;
 }/*# sourceMappingURL=styles.css.map */

@@ -15,16 +15,17 @@ const ImageDisplay = () => {
 
     // This useFirestore hook allows us to go through our firestore and look at the collections named images
     const { docs } = useFirestore('images');
-    console.log(docs);
+    // console.log(docs);
     
 
-    const imageDelete = async (imagesToDelete) => {
+    const imageDelete = (e) => {
 
-        imagesToDelete.preventDefault();
-        
-        deleteDoc(doc(firestore, "images", 'AHRBezRqBjdx2FMfvi0z'));
+        // Prevent default for clicking the button
 
-        console.log("Hiiii");
+        e.preventDefault();
+        // we made the id of our button the unique key from firestore that each image recieves through our map, now the onClick has access to this and can delete the image
+        deleteDoc(doc(firestore, "images", e.target.id));
+
     
         }
 
@@ -35,8 +36,8 @@ const ImageDisplay = () => {
         { docs && docs.map(doc => (
             <div className="imgWrap" key={doc.id}>
                 <p></p>
-                <img src={doc.url} alt="fire store upload" data-aos="fade-up" data-aos-duration="1000"/>
-                <button onClick={imageDelete}>Click here to deleteDoc</button>
+                <img className="imagesToAnimate" src={doc.url} alt="fire store upload" data-aos="fade-up" data-aos-duration="1000"/>
+                <button id={doc.id} onClick={(e) => imageDelete(e)} className="deleteButton">Delete Image</button>
             </div>
         ) ) }
 
