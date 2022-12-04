@@ -35,10 +35,9 @@ const useFirestore = (accessCollection) => {
             })
             // We can not set our empty documents array to the all the documents we have recieved from firestore
             setDocs(images);
-            console.log(docs);
         })
         
-    }, [])
+    },[])
 
     // This will allow us to return all the docs once we have them
     return   {docs};

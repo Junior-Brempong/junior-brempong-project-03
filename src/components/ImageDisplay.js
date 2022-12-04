@@ -1,10 +1,9 @@
 import React from "react";
 import useFirestore from '../hooks/useFirestore';
-import { doc, deleteDoc, collection } from "firebase/firestore";
+import { doc, deleteDoc} from "firebase/firestore";
 import AOS from 'aos';
 import 'aos/dist/aos.css'; // You can also use <link> for styles
 import { firestore } from "../firebase/FirebaseConfig";
-import { async } from "@firebase/util";
 // ..
 AOS.init();
 
@@ -36,7 +35,7 @@ const ImageDisplay = () => {
         { docs && docs.map(doc => (
             <div className="imgWrap" key={doc.id}>
                 <p></p>
-                <img src={doc.url} alt="fire store upload image" data-aos="fade-up" data-aos-duration="1000"/>
+                <img src={doc.url} alt="fire store upload" data-aos="fade-up" data-aos-duration="1000"/>
                 <button onClick={imageDelete}>Click here to deleteDoc</button>
             </div>
         ) ) }
