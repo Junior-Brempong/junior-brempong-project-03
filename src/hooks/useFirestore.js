@@ -26,7 +26,7 @@ const useFirestore = (accessCollection) => {
 
         // This function takes in a snapshot object that represents a snapshot of the database collection. Everytime now that a document is added, it gets a snap shot of the documents collection again (this is how we are essentially listening to our database)
 
-        const unsub = onSnapshot(collectionRef, (snapSnap) => {
+        onSnapshot(collectionRef, (snapSnap) => {
             let images = [];
             // cycle through document currently in the collection when we get the snapshot
             snapSnap.docs.forEach((doc) => {
@@ -37,10 +37,12 @@ const useFirestore = (accessCollection) => {
             setDocs(images);
             console.log(docs);
         })
-    }, [accessCollection])
+        
+    }, [])
 
     // This will allow us to return all the docs once we have them
     return   {docs};
+
 };
 
 export default useFirestore;

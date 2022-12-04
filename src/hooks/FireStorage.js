@@ -69,7 +69,7 @@ const FireStorage = (imgFile) => {
         useEffect ( () => {
 
             if(url) {
-                const collectionRef = addDoc(collection(firestore, "images"), {
+                addDoc(collection(firestore, "images"), {
                     url: url,
                     createdAt: serverTimestamp()
                 })

@@ -53,10 +53,13 @@ const ImageForm = () => {
         
     }
 
+// TRYING TO CREATE A DELETE FUNCTION TO CLEAR COLLECTION
+
+
     const imageDelete = (imagesToDelete) => {
 
     imagesToDelete.preventDefault();
-        
+
     }
 
     return(
