@@ -30,9 +30,6 @@ const FireStorage = (imgFile) => {
             const storageRef = ref(firebaseStorage , imgFile.name);
 
 
-            // 6: Our hook has triggered because of the user upload, we now want to take the url we are provided to in from our progress bar and pass this through to the fire store. This is how we will display the information on the page. We can use a method called  addDoc and collection which firebase will create for us. We now will have an image collection with a randomized ID and two fields (createdAt & url)
-
-
             const uploadTask = uploadBytesResumable(storageRef, imgFile);
 
 
@@ -75,13 +72,10 @@ const FireStorage = (imgFile) => {
                 })
             }
         }, [url])
+        
+        // 5: Now we want to be able to return these values
 
         return { progress, url, error };
-
-
-    // 5: Now we want to be able to return these values
-
-    // return { progress, url, error };
 
 }
 
