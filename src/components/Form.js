@@ -53,15 +53,6 @@ const ImageForm = () => {
         
     }
 
-// TRYING TO CREATE A DELETE FUNCTION TO CLEAR COLLECTION
-
-
-    const imageDelete = (imagesToDelete) => {
-
-    imagesToDelete.preventDefault();
-
-    }
-
     return(
         <form action="">
             {/* This is the input type that will allow a user to select an image from their computer. Our input initially does not do anything aside from populate the name of the image the user would like to upload. However, we can add an onChange */}
