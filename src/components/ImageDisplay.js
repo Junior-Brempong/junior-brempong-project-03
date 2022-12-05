@@ -34,10 +34,10 @@ const ImageDisplay = () => {
         <div className="imgGrid">        
         
         { docs && docs.map(doc => (
-            <div className="imgWrap" key={doc.id}>
+            <div className="imgWrap" key={doc.id} data-aos="fade-up" data-aos-duration="1000">
                 <p></p>
-                <img className="imagesToAnimate" src={doc.url} alt="fire store upload" data-aos="fade-up" data-aos-duration="1000"/>
-                <button id={doc.id} onClick={(e) => imageDelete(e)} className="deleteButton">Delete Image</button>
+                <img className="imagesToAnimate" src={doc.url} alt="fire store upload"/>
+                <button id={doc.id} onClick={(e) => imageDelete(e)} className="deleteButton">X</button>
             </div>
         ) ) }
 

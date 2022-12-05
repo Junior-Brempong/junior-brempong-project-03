@@ -176,12 +176,14 @@ form {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
+  position: relative;
 }
 
 .deleteButton {
   text-decoration: none;
   display: block;
-  width: 175px;
+  border-radius: 100%;
+  width: 50px;
   height: 50px;
   padding: 5px;
   background: #e4bff2;
@@ -191,11 +193,14 @@ form {
   margin: 10px auto;
   line-height: 30px;
   font-weight: bold;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
+  position: absolute;
+  right: -10px;
+  top: 10px;
 }
 
-.imgGrid .imgWrap:hover {
-  transform: scale(1.2);
+.imgGrid .imgWrap.aos-init.aos-animate:hover {
+  transform: scale(1.1);
   transition: all 0.35s;
 }
 .imgGrid button:hover {
