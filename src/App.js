@@ -4,6 +4,7 @@ import Title from './components/Title';
 import ImageForm from './components/Form';
 // import { useState } from "react";
 import ImageDisplay from './components/ImageDisplay';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       {/* Imported our Image form in our root to return our JSX */}
       <ImageForm />
       <ImageDisplay />
+      <Footer/>
     </div>
   );
 }

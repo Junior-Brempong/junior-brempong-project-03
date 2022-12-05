@@ -1,0 +1,22 @@
+This documentation references the coding logic for this particular application. It will go in sequence according to the app build out and will reference the steps provided in the code in each particular file (example: Step 1 in FirebaseConfig.js)
+
+1. FirebaseConfig.js:
+
+Here we are setting up our Firebase API! This is the information that we will use to initalize our app and connect to the backend of Firebase.
+
+// Step 1: Initalize the firestore service:
+  // We save both of these functions into variables for when we easily want to interact with either one of these
+
+// Step 2: Export our named variables so we can use these services in other files in the future
+
+2. Title.js:
+
+This component references the JSX we will mount to that page on page load, specifically in the header.
+
+3. Upload Form:
+
+4. Firestore Hook:
+
+5. Progress Bar:
+
+6. Firestore Hook & Images Display

@@ -21,7 +21,7 @@ const firebaseConfig = {
 
 initializeApp(firebaseConfig);
 
-// Initalize the firestore service:
+// Step 1: Initalize the firestore service:
   // We save both of these functions into variables for when we easily want to interact with either one of these
 
 const firebaseStorage = getStorage();
@@ -29,7 +29,7 @@ const firebaseStorage = getStorage();
 const firestore = getFirestore();
 
 
-// Exporting so we can use these services in other files in the future
+// Step 2: Exporting so we can use these services in other files in the future
 export { firebaseStorage, firestore };
 
 

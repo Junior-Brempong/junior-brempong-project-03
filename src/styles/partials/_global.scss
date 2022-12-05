@@ -1,6 +1,5 @@
 // Global  & Base styles:
 
-
 /* base styles & title */
 body{
   font-family: 'VT323', monospace;
@@ -20,6 +19,8 @@ body{
   height: 40vmin;
   pointer-events: none;
 }
+
+// Styling point of reference from: https://www.youtube.com/watch?v=vUe91uOx7R0&t=2948s
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
