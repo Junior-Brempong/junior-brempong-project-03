@@ -208,4 +208,10 @@ form {
   transform: scale(1.2);
   transition: all 0.35s;
   color: white;
+}
+
+@media (max-width: 485px) {
+  .imgGrid img {
+    width: 300px;
+  }
 }/*# sourceMappingURL=styles.css.map */
