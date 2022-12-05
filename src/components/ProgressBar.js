@@ -26,7 +26,7 @@ const ProgressBar = ( {file, setFile} ) => {
     // Step 1: Return a JSX template that we can put in our App.js which will impact what is displayed on screen
     // Step 2(b): Now that we have access to the progress status, we can style our progress bar div to reflect that by adding the width of the progress as a style
     return (
-        <div className="progress-bar" style={ {width: progress + '%'} }></div>
+        <div className="progressBarStripe" style={ {width: progress + '%'} }></div>
     )
 
 }

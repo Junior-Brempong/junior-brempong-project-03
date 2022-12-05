@@ -343,7 +343,7 @@ body {
 }
 
 /* progress bar styles */
-.progress-bar {
+.progressBarStripe {
   height: 10px;
   background: pink;
   margin-top: 20px;
