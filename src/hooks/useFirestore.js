@@ -18,11 +18,11 @@ const useFirestore = (accessCollection) => {
 
     useEffect(() => {
 
-// This is to get a collection from our firestore, this would essentially be images, however, we passed that through and can say collection
+// Step 2(a): This is to get a collection from our firestore, this would essentially be images, however, we passed that through and can say collection
 
         const collectionRef = collection(firestore, 'images')
 
-        // This method fires a callback function every time that a change occurs inside the collection and also fires it once initially. 
+        // Step 2(b):This method fires a callback function every time that a change occurs inside the collection and also fires it once initially. 
 
         // This function takes in a snapshot object that represents a snapshot of the database collection. Everytime now that a document is added, it gets a snap shot of the documents collection again (this is how we are essentially listening to our database)
 
@@ -33,7 +33,7 @@ const useFirestore = (accessCollection) => {
             // We can now push data from each document into the document array. This gives us the data in the document. Using spread will give us all the properties of these docs and then push this to our documents which is an empty array. Now each document stored in the array will have the data associated with it and the id. We can use the key we get for when we need to output
                 images.push({...doc.data(), id: doc.id})
             })
-            // We can not set our empty documents array to the all the documents we have recieved from firestore
+            // We can now set our empty documents array to the all the documents we have recieved from firestore
             setDocs(images);
         })
         

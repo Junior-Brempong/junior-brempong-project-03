@@ -1,3 +1,4 @@
+// This project was inspired by a project reference on Youtube (https://www.youtube.com/watch?v=vUe91uOx7R0&t=2284s). Because the video was created in 2020, several features on Firebase, FireStore, and React have changed quite a bit. 
 import React from 'react';
 import './styles/styles.css';
 import Title from './components/Title';
@@ -5,6 +6,7 @@ import ImageForm from './components/Form';
 // import { useState } from "react";
 import ImageDisplay from './components/ImageDisplay';
 import Footer from './components/Footer';
+
 
 function App() {
   return (
