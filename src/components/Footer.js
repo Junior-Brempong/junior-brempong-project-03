@@ -1,6 +1,6 @@
 const Footer = () => {
     return (
-        <footer>Created with 🌟 by Junior Brempong</footer>
+        <footer>Created with 🌟 by Junior Brempong (Created at Juno College 🏫)</footer>
     )
 }
 
