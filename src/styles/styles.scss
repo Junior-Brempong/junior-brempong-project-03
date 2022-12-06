@@ -1,8 +1,14 @@
+// Set-up & Global Styles
+
 @use "./partials/setup";
 @use "./partials/global";
+
+// Body & Content Styles
 @use "./partials/header";
 @use "./partials/progressBar";
 @use "./partials/uploadButton";
 @use "./partials/imgGrid";
 @use "./partials/footer";
+
+// Media Query Styles
 @use "./partials/mediaQueries";

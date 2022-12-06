@@ -12,7 +12,6 @@ function App() {
   return (
     <div className="App">
       <Title/>
-      {/* Imported our Image form in our root to return our JSX */}
       <ImageForm />
       <ImageDisplay />
       <Footer/>
@@ -21,6 +20,13 @@ function App() {
 }
 
 export default App;
+
+
+
+
+
+
+// *******************************************************************
 
 
 // PSEUDO CODE:
@@ -46,18 +52,10 @@ export default App;
     // (a) We will write this map in its own component, just to keep things clean, which means we will pass our list photos down as a PROP to this component.
 
 
+// ********************************************************************
 
 
-
-
-
-
-
-
-
-// Personal Notes:
-
-
+// PROJECT PREP NOTES:
 
 // STEP 1: Connect our react App to firebase to indicate that when our JSX mounts, we will make a call to Firebase to connect our API where we will then be able to grab our objects and surface them on the page.
   // a. Create a new project in firebase and import firebase into JS
