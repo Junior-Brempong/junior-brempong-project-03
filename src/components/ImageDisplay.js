@@ -29,7 +29,7 @@ const ImageDisplay = () => {
 
 
     return (
-        <div className="imgGrid">        
+        <section className="imgGrid">        
 
 
         {/* Step 2: We have our docs thanks to our Firestore hook, now what we can do is map through each of these documents and dispay them to the page, assiging the unique key fire store gives them as their key */}
@@ -41,7 +41,7 @@ const ImageDisplay = () => {
             </div>
         ) ) }
 
-        </div>
+        </section>
     )
 
 }

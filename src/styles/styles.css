@@ -350,6 +350,11 @@ body {
   margin-bottom: 20px;
 }
 
+.output {
+  width: 80%;
+  margin: 0 auto;
+}
+
 input[type=file] {
   display: none;
 }
