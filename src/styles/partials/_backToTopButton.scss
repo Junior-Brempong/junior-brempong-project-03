@@ -16,9 +16,11 @@
     opacity .5s, visibility .5s;
     box-shadow: 0 0.2rem 1.2rem rgba(0,0,0,0.2);
     font-weight: bold;
+    border: 2px solid white;
 }
     
     #backToTopButton:hover {
     background-color: #555; /* Add a dark-grey background on hover */
-    opacity: 2;
+    transform: scale(1.1);
+    transition: all 0.35s;
     }
