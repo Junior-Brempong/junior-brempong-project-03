@@ -4,6 +4,7 @@
 @use "./partials/global";
 
 // Body & Content Styles
+@use "./partials/backToTopButton";
 @use "./partials/header";
 @use "./partials/progressBar";
 @use "./partials/uploadButton";

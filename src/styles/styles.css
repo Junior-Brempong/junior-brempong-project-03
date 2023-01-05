@@ -277,6 +277,30 @@ body {
     transform: rotate(360deg);
   }
 } /*# sourceMappingURL=global.css.map */
+#backToTopButton {
+  display: none;
+  position: fixed;
+  bottom: 70px;
+  right: 30px;
+  z-index: 99;
+  border: none;
+  outline: none;
+  background-color: #e4bff2;
+  color: white;
+  cursor: pointer;
+  padding: 0px 10px;
+  border-radius: 10px;
+  font-size: 18px;
+  transition: background-color 0.3s, opacity 0.5s, visibility 0.5s;
+  box-shadow: 0 0.2rem 1.2rem rgba(0, 0, 0, 0.2);
+  font-weight: bold;
+}
+
+#backToTopButton:hover {
+  background-color: #555; /* Add a dark-grey background on hover */
+  opacity: 2;
+}
+
 .title {
   background-image: url(https://wallpapercave.com/uwp/uwp122095.gif);
   height: 110%;
