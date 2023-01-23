@@ -6,6 +6,7 @@ import ImageForm from './components/Form';
 // import { useState } from "react";
 import ImageDisplay from './components/ImageDisplay';
 import Footer from './components/Footer';
+import BackToTopButton from './components/BackToTopButton';
 
 
 function App() {
@@ -25,18 +26,6 @@ function App() {
 
   }
 
-  // When the user clicks on the button, scroll to the top of the document
-  function topFunction() {
-
-   
-  window.scrollTo({
-    top: 0,
-    left: 0,
-    behavior: 'smooth'
-  });
-
-  }
-
 
   return (
     <div className="App">
@@ -44,10 +33,7 @@ function App() {
       <ImageForm />
       <ImageDisplay />
       <Footer/>
-
-      <a id='backToTopButton' onClick={topFunction}>
-        <p>Back to top!</p>
-      </a>
+      <BackToTopButton />
     </div>
   );
 }

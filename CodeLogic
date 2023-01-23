@@ -138,3 +138,6 @@ This component references the JSX we will mount to that page on page load, speci
 
       // Step 3(b): We made the id of our button the unique key from firestore that each image recieves through our map, now the onClick has access to this and can delete the image. So we use the deleteDoc() given to use from firestore and pass through the exact key needed to delete the images from our map. This is again, given to our onClick to our button, making us able to delete each image clicked
 
+8. Back To Top Button:
+
+Simple component we use to render a button on our screen that we have passed through a function of ‘topFunction()’ for when a user clicks it will return the user to the top of the page.
